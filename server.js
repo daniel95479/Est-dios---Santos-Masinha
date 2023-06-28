@@ -70,7 +70,7 @@ app.post("/atualizar-jogadores", (req, res) => {
     if (estadioencontrar) {
       estadioencontrar.JogadoresNoEstadio = valor + estadioencontrar.JogadoresNoEstadio;
       console.log(`Estádio ${estadio} atualizado com valor ${valor}`);
-      res.send(`Estádio ${estadio} atualizado com sucesso!`);
+      res.send(`Estádio ${estadio} atualizado com sucesso para o valor ${valor}`);
     } else {
       console.log(`Estádio ${estadio} não encontrado`);
       res.status(404).send(`Estádio ${estadio} não encontrado.`);
