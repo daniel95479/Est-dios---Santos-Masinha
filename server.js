@@ -96,6 +96,7 @@ app.listen(port, () => {
 function mudarjogadores() {
   estadios.forEach(function(coisa) {
     coisa.JogadoresNoEstadio = 0;
+    console.log(`O Estádio ${coisa.Estadio} agora tem ${coisa.JogadoresNoEstadio} jogadores.`)
   });
 }
 
