@@ -45,7 +45,7 @@ const estadios = [
   },
     {
     Estadio: "Pacaembú",
-    JogadoresNoEstadio:"0
+    JogadoresNoEstadio: 0
   },
     {
     Estadio: "São Januário",
