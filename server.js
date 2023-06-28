@@ -24,7 +24,7 @@ const estadios = [
     JogadoresNoEstadio: 0
   },
     {
-    Estadio: "Estádio Beira Rio",
+    Estadio: "Beira Rio",
     JogadoresNoEstadio: 0
   },
     {
