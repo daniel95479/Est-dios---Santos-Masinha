@@ -68,7 +68,7 @@ app.post("/atualizar-jogadores", (req, res) => {
     const estadioencontrar = estadios.find((coisa) => coisa.Estadio === estadio);
 
     if (estadioencontrar) {
-      estadioencontrar.JogadoresNoEstadio = valor;
+      estadioencontrar.JogadoresNoEstadio = valor + estadioencontrar.JogadoresNoEstadio;
       console.log(`Estádio ${estadio} atualizado com valor ${valor}`);
       res.send(`Estádio ${estadio} atualizado com sucesso!`);
     } else {
