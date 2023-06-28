@@ -100,4 +100,4 @@ function mudarjogadores() {
   });
 }
 
-setInterval(mudarjogadores, 60000);
+setInterval(mudarjogadores, 35000);
