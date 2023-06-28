@@ -90,5 +90,5 @@ app.get("/obter-jogadores", function (req, res) {
 const port = 3000;
 
 app.listen(port, () => {
-  console.log(`Servidor iniciado com sucesso na porta ${port}`);
+  console.log(`Servidor iniciado na porta ${port}`);
 });
