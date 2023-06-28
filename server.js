@@ -70,8 +70,8 @@ app.post("/atualizar-jogadores", (req, res) => {
     if (estadioencontrar) {
 const resultado = parseInt(valor) + estadioencontrar.JogadoresNoEstadio;
       estadioencontrar.JogadoresNoEstadio = resultado;
-      console.log(`Estádio ${estadio} atualizado com valor ${valor}`);
-      res.send(`Estádio ${estadio} atualizado com sucesso para o valor ${valor}`);
+      console.log(`Estádio ${estadio} atualizado com valor ${estadioencontrar.JogadoresNoEstadio}`);
+      res.send(`Estádio ${estadio} atualizado com sucesso para o valor ${estadioencontrar.JogadoresNoEstadio}`);
     } else {
       console.log(`Estádio ${estadio} não encontrado`);
       res.status(404).send(`Estádio ${estadio} não encontrado.`);
@@ -91,5 +91,5 @@ app.get("/obter-jogadores", function (req, res) {
 const port = 3000;
 
 app.listen(port, () => {
-  console.log(`Servidor iniciado na porta ${port}`);
+  console.log(`Servidor iniciado na porta ${port}.`);
 });
