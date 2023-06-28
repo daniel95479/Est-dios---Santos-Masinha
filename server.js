@@ -68,7 +68,7 @@ app.post("/atualizar-jogadores", (req, res) => {
     const estadioencontrar = estadios.find((coisa) => coisa.Estadio === estadio);
 
     if (estadioencontrar) {
-      const resultado = valor + estadioencontrar.JogadoresNoEstadio;
+const resultado = parseInt(valor) + estadioencontrar.JogadoresNoEstadio;
       estadioencontrar.JogadoresNoEstadio = resultado;
       console.log(`Estádio ${estadio} atualizado com valor ${valor}`);
       res.send(`Estádio ${estadio} atualizado com sucesso para o valor ${valor}`);
@@ -91,5 +91,5 @@ app.get("/obter-jogadores", function (req, res) {
 const port = 3000;
 
 app.listen(port, () => {
-  console.log(`Servidor iniciado na porta ${port}.`);
+  console.log(`Servidor iniciado na porta ${port}`);
 });
