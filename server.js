@@ -75,7 +75,7 @@ app.post("/atualizar-jogadores", (req, res) => {
       console.log(`Estádio ${estadio} não encontrado`);
       res.status(404).send(`Estádio ${estadio} não encontrado.`);
     }
-  } catch (error) {\sdadsa
+  } catch (error) {
     console.error("Erro ao atualizar os registros:", error);
     res.status(500).send("Erro ao atualizar os registros.");
   }
