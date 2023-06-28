@@ -82,7 +82,6 @@ const resultado = parseInt(valor) + estadioencontrar.JogadoresNoEstadio;
   }
 });
 
-
 app.get("/obter-jogadores", function (req, res) {
   res.send(estadios)
   console.log(`Estádios enviados com sucesso`);
@@ -93,3 +92,11 @@ const port = 3000;
 app.listen(port, () => {
   console.log(`Servidor iniciado na porta ${port}.`);
 });
+
+function mudarjogadores() {
+  estadios.forEach(function(coisa) {
+    coisa.JogadoresNoEstadio = 0;
+  });
+}
+
+setInterval(mudarjogadores, 60000);
