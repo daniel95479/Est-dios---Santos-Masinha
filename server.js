@@ -62,24 +62,26 @@ app.use(express.json());
 app.use(cors());
 
 app.post("/atualizar-jogadores", (req, res) => {
-  try {
-    const { estadio, valor } = req.body;
-
-    const estadioencontrar = estadios.find((coisa) => coisa.Estadio === estadio);
-
-    if (estadioencontrar) {
-const resultado = parseInt(valor) + estadioencontrar.JogadoresNoEstadio;
-      estadioencontrar.JogadoresNoEstadio = resultado;
-      console.log(`Estádio ${estadio} atualizado com valor ${estadioencontrar.JogadoresNoEstadio}`);
-      res.send(`Estádio ${estadio} atualizado com sucesso para o valor ${estadioencontrar.JogadoresNoEstadio}`);
-    } else {
-      console.log(`Estádio ${estadio} não encontrado`);
-      res.status(404).send(`Estádio ${estadio} não encontrado.`);
+  setTimeout(() => {
+    try {
+      const { estadio, valor } = req.body;
+  
+      const estadioencontrar = estadios.find((coisa) => coisa.Estadio === estadio);
+  
+      if (estadioencontrar) {
+  const resultado = parseInt(valor) + estadioencontrar.JogadoresNoEstadio;
+        estadioencontrar.JogadoresNoEstadio = resultado;
+        console.log(`Estádio ${estadio} atualizado com valor ${estadioencontrar.JogadoresNoEstadio}`);
+        res.send(`Estádio ${estadio} atualizado com sucesso para o valor ${estadioencontrar.JogadoresNoEstadio}`);
+      } else {
+        console.log(`Estádio ${estadio} não encontrado`);
+        res.status(404).send(`Estádio ${estadio} não encontrado.`);
+      }
+    } catch (error) {
+      console.error("Erro ao atualizar os registros:", error);
+      res.status(500).send("Erro ao atualizar os registros.");
     }
-  } catch (error) {
-    console.error("Erro ao atualizar os registros:", error);
-    res.status(500).send("Erro ao atualizar os registros.");
-  }
+  }, 2000);
 });
 
 app.get("/obter-jogadores", function (req, res) {
@@ -100,4 +102,4 @@ function mudarjogadores() {
   });
 }
 
-setInterval(mudarjogadores, 35000);
+setInterval(mudarjogadores, 70740);
