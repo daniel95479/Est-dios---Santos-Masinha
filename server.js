@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+let podeounao = "não pode" 
+
 const estadios = [
   {
     Estadio: "Arena Condá",
@@ -62,7 +64,8 @@ app.use(express.json());
 app.use(cors());
 
 app.post("/atualizar-jogadores", (req, res) => {
-  setTimeout(() => {
+  if (podeounao === "pode")  {
+    setTimeout(() => {
     try {
       const { estadio, valor } = req.body;
   
@@ -82,6 +85,8 @@ app.post("/atualizar-jogadores", (req, res) => {
       res.status(500).send("Erro ao atualizar os registros.");
     }
   }, 2000);
+  }
+
 });
 
 app.get("/obter-jogadores", function (req, res) {
@@ -96,10 +101,12 @@ app.listen(port, () => {
 });
 
 function mudarjogadores() {
+  podeounao = "não pode";
   estadios.forEach(function(coisa) {
     coisa.JogadoresNoEstadio = 0;
     console.log(`O Estádio ${coisa.Estadio} agora tem ${coisa.JogadoresNoEstadio} jogadores.`)
   });
+  podeounao = "pode";
 }
 
 setInterval(mudarjogadores, 70740);
